@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=League+Spartan:wght@100..900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Outfit:wght@100..900&family=Young+Serif&display=swap"
+      rel="stylesheet" />
+    <title>Frontend Mentor | Bento grid</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      body {
+        margin: 0;
+        background-color: whitesmoke;
+      }
+
+      .outside-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        padding-top: 3em;
+        font-family: "DM Sans", serif;
+        font-style: normal;
+      }
+      h1,
+      h2 {
+        line-height: 1em;
+        font-weight: 500;
+      }
+      .flex-container {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+        height: 670px;
+        gap: 20px;
+      }
+
+      .grid-container {
+        display: grid;
+        grid-template-columns: 200px 200px 200px;
+        grid-template-rows: 230px 200px 200px;
+        gap: 20px;
+        margin-left: 20px;
+      }
+      .item {
+        border-radius: 1cap;
+        padding-left: 1em;
+      }
+      .flex-container > .item {
+        height: 50%;
+      }
+      .create {
+        background-color: hsl(31, 66%, 93%);
+      }
+      .purple-text {
+        color: hsl(256, 67%, 59%);
+      }
+      .write {
+        height: 50%;
+        background-color: hsl(39, 100%, 71%);
+      }
+
+      .socialmedia {
+        grid-column: 1/3;
+        grid-row: 1/2;
+        background-color: hsl(256, 67%, 59%);
+        color: hsl(0, 0%, 100%);
+        text-align: center;
+      }
+      .socialmedia > .star-reviews {
+        line-height: 2em;
+      }
+
+      .yellow-star {
+        color: hsl(39, 100%, 71%);
+        font-size: x-large;
+      }
+      .yellow-text {
+        color: hsl(39, 100%, 71%);
+      }
+      .manage {
+        grid-column: 1/2;
+        grid-row: 2/3;
+        background-color: hsl(0, 0%, 100%);
+        overflow: hidden;
+      }
+      .maintain {
+        grid-column: 2/3;
+        grid-row: 2/3;
+        background-color: hsl(39, 100%, 71%);
+        overflow-y: hidden;
+      }
+      .schedule {
+        grid-column: 3/4;
+        grid-row: 1/3;
+        background-color: hsl(254, 88%, 90%);
+        overflow: hidden;
+      }
+      .grow {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        grid-column: 2/4;
+        grid-row: 3/4;
+        background-color: hsl(256, 67%, 59%);
+      }
+
+      .fastergrowth {
+        grid-column: 1/2;
+        grid-row: 3/4;
+        background-color: hsl(0, 0%, 100%);
+      }
+
+      .audience-growth {
+        padding-bottom: 1em;
+      }
+      .grow-followers {
+        float: left;
+      }
+      .white-text {
+        font-size: x-large;
+        color: hsl(0, 0%, 100%);
+      }
+
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        margin-top: 2em;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+
+      @media (min-width: 319px) and (max-width: 480px) {
+        .outside-box {
+          display: flex;
+          flex-direction: column-reverse;
+          align-items: center;
+          margin: 20px;
+        }
+
+        .grid-container {
+          grid-template-columns: 100%;
+          grid-template-rows: auto;
+        }
+        .socialmedia {
+          grid-column: 1 /2;
+          grid-row: 1 / 2;
+        }
+        .manage {
+          grid-column: 1 /2;
+          grid-row: 2 / 3;
+          height: min-content;
+        }
+
+        .maintain {
+          grid-column: 1 / 2;
+          grid-row: 3 / 4;
+        }
+        .schedule {
+          grid-column: 1 / 2;
+          grid-row: 4 / 5;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          text-align: center;
+        }
+        .schedule-image {
+          width: 100%;
+        }
+        .grow {
+          grid-column: 1 / 2;
+          grid-row: 5 / 6;
+          flex-direction: column;
+          align-items: center;
+          padding-top: 10px;
+        }
+        .white-text {
+          width: 180px;
+          padding-top: 20px;
+        }
+
+        .grow-followers {
+          clear: left;
+          width: 180px;
+        }
+        .fastergrowth {
+          grid-column: 1 / 2;
+          grid-row: 6 / 7;
+        }
+        .audience-image {
+          height: 60px;
+        }
+        .white-text {
+          text-align: center;
+        }
+        .flex-container {
+          width: 100%;
+          height: fit-content;
+          padding-left: 20px;
+          padding-top: 20px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="outside-box">
+      <div class="flex-container">
+        <div class="item create">
+          <h2>
+            Create and schedule content
+            <i><span class="purple-text">quicker.</span></i>
+          </h2>
+          <img
+            src="./assets/images/illustration-create-post.webp"
+            alt="creat-post image"
+            height="80" />
+        </div>
+        <div class="item write">
+          <h2>Write your content <br />using AI.</h2>
+          <img
+            src="./assets/images/illustration-ai-content.webp"
+            alt="ai-content image"
+            width="180px" />
+        </div>
+      </div>
+      <div class="grid-container">
+        <div class="item socialmedia">
+          <h1>
+            Social Media <span class="yellow-text">10x</span> <br />
+            <i>Faster</i>
+            with AI
+          </h1>
+          <div class="star-reviews">
+            <span class="yellow-star"
+              >&#9733; &#9733; &#9733; &#9733; &#9733; </span
+            ><br />Over 4,000 5-star reviews
+          </div>
+        </div>
+        <div class="item manage">
+          <img
+            src="./assets/images/illustration-multiple-platforms.webp"
+            ;
+            width="270px" />
+          <h2>Manage multiple accounts and platforms.</h2>
+        </div>
+        <div class="item maintain">
+          <h2>Maintain a consistent posting schedule.</h2>
+          <img
+            src="./assets/images/illustration-consistent-schedule.webp"
+            alt="schedule image"
+            width="150px" />
+        </div>
+        <div class="item schedule">
+          <h2>Schedule to social media.</h2>
+          <img
+            class="schedule-image"
+            src="assets/images/illustration-schedule-posts.webp"
+            width="280px" />
+          <p>
+            Optimize post timings to publish content at the perfect time for
+            your audience.
+          </p>
+        </div>
+        <div class="item grow">
+          <img
+            class="grow-followers"
+            src="./assets/images/illustration-grow-followers.webp"
+            alt="followers image"
+            height="150px" />
+          <div class="white-text">Grow followers with non-stop content.</div>
+        </div>
+        <div class="item fastergrowth">
+          <h1>>56%</h1>
+          <div class="audience-growth">faster audience growth</div>
+          <img
+            class="audience-image"
+            src="./assets/images/illustration-audience-growth.webp"
+            alt="audience image"
+            height="40px" />
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+      Coded by <a href="#">Cici Chen</a>.
+    </div>
+  </body>
+</html>
